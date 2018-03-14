@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Course SITE</title>
+
+	<style>
+	body{background-color: #ffeecc;}
+	#d1
+	{
+		top:150px;
+		position: absolute;
+		left:150px;
+	}
+	#d2{
+
+		top: 150px;
+		position : absolute;
+		left : 600px;
+	}
+	#d3
+	{
+		top: 150px;
+		position: absolute;
+		right: 150px;
+	}
+</style>
+</head>
+<body>
+	<h1 align="center" ><u>COURSE SITE</u></h1>
+<hr>
+<div id="d1">
+	<form method="post" action="{% url 'detail' %}">
+		{%csrf_token%}
+		<input type="text" name="q" placeholder="COURSE CODE">&emsp;&emsp;
+		<button type="submit">Search</button>
+	</form>
+</div>
+<div id = "d2">
+	<form method="post" action ="{% url 'cfield' %}">
+		{%csrf_token%}
+		<input type="text" name="p" placeholder="CAREER FIELD">&emsp;&emsp;
+		<button type = "submit">Search</button>
+	</form>
+</div>
+<div id="d3">
+	<a href="{% url 'add_reviews' %}"> ADD REVIEWS</a>
+</div>
+
+
+	<!--{% for x in allreviews %}
+		{{ x.Professor}}<br>
+		{{ x.Offered_year}}<br>
+		{{ x.Semester }}<br>
+		{{ x.Review }}<br>
+	{% endfor %}-->
+	
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COURSE SITE</title>
+	<style>
+		body{background-color: #ffeecc;}
+
+	</style>
+</head>
+<body>
+	<h1 align="center" ><u>COURSE SITE</u></h1>
+<hr>
+<div align="center">
+	<h3 > REVIEWS </h3>
+
+	<form method = 'post' action = "{% url 'add_reviews' %}" >
+		{% csrf_token %}
+		<input type="text" name="ccode" placeholder="Course Code">
+		<input type = "text" name = "professor" placeholder="Professor">
+		<input type="text" name="offered_year" placeholder="Year">
+		<input type="text" name="semester" placeholder="semester">
+		<br><br>
+
+		<textarea style="font-size:20px;" rows="10" cols="61.75" name="review" placeholder="Give your review here"></textarea>
+		<br><br>
+
+		<button align="center" type="submit">ADD REVIEW</button>
+
+	</form>
+</div>
+
+</body>
+</html>

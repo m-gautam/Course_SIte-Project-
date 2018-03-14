@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+		<style>
+		body{background-color: #ffeecc;}
+	#d1
+	{
+		top:150px;
+		position: absolute;
+		left:180px;
+	}
+	tab1{padding-left: 4em;}
+</style>
+</head>
+<body>
+
+	<h1 align="center" ><u>COURSE SITE</u></h1>
+<hr>
+
+	<div id="d1" align="center">
+	<form method="post" action="{% url 'add_course' %}">
+		{%csrf_token%}
+		
+		<input type="text" name="course_code" placeholder="COURSE CODE">
+		<tab1><input type="text" name="course_name" placeholder="COURSE NAME"></tab1>
+		<tab1><input type="text" name="course_credits" placeholder="COURSE CREDITS"></tab1>
+		<tab1><input type="text" name="pcourses" placeholder = "PREQ COURSES"></tab1>
+		<tab1><input type="text" name="tag" placeholder = "CAREER FIELD"></tab1>
+		<br><br>
+		<button align="center" type="submit">ADD COURSE</button>
+	
+	</form>
+	</div>
+
+
+</body>
+</html>

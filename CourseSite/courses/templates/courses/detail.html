@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COURSE INFO</title>
+	<style>
+
+		body{background-color: #ffeecc;}
+	</style>
+</head>
+<body>
+	<h2 align ="center">COURSE SITE</h2>
+	<hr>
+	{% if p %}
+		<h3>Course Details:</h3><br>
+		{% for x in p %}
+		COURSE CODE: {{ x.course_code }}<br>
+		COURSE NAME: {{ x.course_name }}<br>
+		COURSE CREDITS: {{ x.course_credits }}<br>
+		PRE-REUISITES: {{ x.prereq_courses }}<br>
+		{% endfor %}
+	{% else %}
+		<h5>COURSE DOESN'T EXISTS.<a href={% url 'add_course' %}> ADD COURSE</a></h5><br>
+	{% endif %}
+</body>
+</html>

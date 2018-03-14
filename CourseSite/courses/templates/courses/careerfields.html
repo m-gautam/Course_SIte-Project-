@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COURSE SITE</title>
+	<style>
+		body{background-color: #ffeecc;}
+
+	</style>
+</head>
+<body>
+	<h2 align = "center">COURSE SITE</h2>
+	<hr>
+	<h4>CAREER FIELD:</h4>
+	{% if field.career_field %}
+		{{ field.career_field }}
+	{% endif %}
+	{% for x in field %}
+		{{ x.course_code }}<br>
+	{% endfor %}
+
+</body>
+</html>
