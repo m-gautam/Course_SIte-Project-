@@ -16,7 +16,8 @@ def index(request):
 def detail(request):
 	search_str = request.POST['q']
 	p = Course.objects.filter(course_code = search_str)
-	return render(request, 'courses/detail.html',{'p':p} )
+	q = Reviews.objects.filter(ccode = search_str)
+	return render(request, 'courses/detail.html',{'p':p, 'q':q} )
 
 def add_course(request):
 	if request.method == 'GET' :
@@ -53,7 +54,7 @@ def add_reviews(request):
 			review = request.POST['review']
 
 			review = Reviews(
-					#ccode = ccode,
+				ccode = ccode,
 				professor = professor,
 				offered_year = offered_year,
 				semester = semester,
@@ -67,6 +68,11 @@ def cfield(request):
 	search_str = request.POST['p']
 	field = Course.objects.filter( career_field = search_str);
 	return render (request, 'courses/careerfields.html', {'field' : field})
+
+def profdetails(request):
+	search_str = request.POST['p']
+	field = Reviews.objects.filter(professor = search_str)
+	return render (request, 'courses/profdetails.html', {'field': field})
 
 
 

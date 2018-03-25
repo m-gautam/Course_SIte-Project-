@@ -17,7 +17,18 @@
 		COURSE NAME: {{ x.course_name }}<br>
 		COURSE CREDITS: {{ x.course_credits }}<br>
 		PRE-REUISITES: {{ x.prereq_courses }}<br>
+		<br><br>
+
 		{% endfor %}
+		<h3>Reviews of Course:</h3><br>
+		{% for x in q %}
+		PROFESSOR: {{ x.professor }}<br>
+		SEMESTER: {{ x.semester }}<br>
+		YEAR: {{x.offered_year}}</br>
+		REVIEW: {{ x.review }}
+		<br><br>
+		{% endfor %}
+
 	{% else %}
 		<h5>COURSE DOESN'T EXISTS.<a href={% url 'add_course' %}> ADD COURSE</a></h5><br>
 	{% endif %}

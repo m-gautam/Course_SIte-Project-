@@ -42,7 +42,16 @@
 		<button type = "submit">Search</button>
 	</form>
 </div>
-<div id="d3">
+<div id = "d3">
+	<form method="post" action ="{% url 'profdetails' %}">
+		{%csrf_token%}
+		<input type="text" name="p" placeholder="PROFESSOR">&emsp;&emsp;
+		<button type = "submit">Search</button>
+	</form>
+</div>
+<br><br>
+
+<div>
 	<a href="{% url 'add_reviews' %}"> ADD REVIEWS</a>
 </div>
 
