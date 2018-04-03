@@ -32,7 +32,8 @@
 
 
 > ### In app folder course/settings.py
-
+    **edit above fields according to your system**
+    
      DATABASES = {
 
          'default': {
@@ -47,7 +48,11 @@
      }
 
 
-> **edit above fields according to your system**
+### After connecting the database, apply the project migrations.
+> python manage.py migrate
+
+### RUN
+> python manage.py runserver
 
 
 
