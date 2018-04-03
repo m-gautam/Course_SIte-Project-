@@ -20,7 +20,7 @@
 * pip install -e django/
 
 
-## Installation of Database
+> ## Installation of Database
 * sudo apt-get update
 * sudo apt-get install python-pip python-dev mysql-server libmysqlclient-dev
 * sudo mysql_install_db
@@ -31,7 +31,7 @@
 > git clone https://github.com/m-gautam/Course_SIte-Project-.git
 
 
-### In app folder course/settings.py
+> ### In app folder course/settings.py
 
      DATABASES = {
 
