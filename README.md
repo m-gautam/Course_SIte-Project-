@@ -31,16 +31,27 @@
 > git clone https://github.com/m-gautam/Course_SIte-Project-.git
 
 > In app folder course/settings.py
+
 > DATABASES = {
+
 >    'default': {
+
 >        'ENGINE': 'django.db.backends.mysql',
+
 >       'NAME': 'Courses',
+
 >        'USERNAME': 'root',
+
 >       'PASSWORD': '*******',
+
 >        'HOST': 'localhost',
+
 >        'PORT': ''
+
 >    }
+
 > }
+
 > **edit above fields according to your system**
 
 
