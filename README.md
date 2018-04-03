@@ -49,10 +49,10 @@
 
 
 ### After connecting the database, apply the project migrations.
-> **python manage.py migrate**
+> *sudo python manage.py migrate*
 
 ### RUN
-> **python manage.py runserver**
+> *sudo python manage.py runserver*
 
 
 
