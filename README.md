@@ -11,11 +11,15 @@
 * SEARCH for Career field(this will tell what courses you should do to go in a particular field)
 
 
+## Installation Guide
+
 > https://www.python.org/downloads/
 
 > https://docs.djangoproject.com/en/1.11/intro/install/
 
-> git clone
+> git clone https://github.com/m-gautam/Course_SIte-Project-.git
+
+
 
 
 
