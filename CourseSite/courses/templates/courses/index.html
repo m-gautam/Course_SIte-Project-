@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Course SITE</title>
+	<title>Course Site</title>
 
 	<style>
 	body{background-color: #ffeecc;}
@@ -22,6 +22,12 @@
 		top: 150px;
 		position: absolute;
 		right: 150px;
+	}
+	#d4
+	{
+		top:40px;
+		position: absolute;
+		right:30px;
 	}
 </style>
 </head>
@@ -51,11 +57,11 @@
 </div>
 <br><br>
 
-<div>
-	<a href="{% url 'add_reviews' %}"> ADD REVIEWS</a>
+<div id="d4">
 	<a href = "{% url 'logout' %}">LOGOUT</a>
 </div>
 
+<a href="{% url 'add_reviews' %}"> ADD REVIEWS</a>
 
 	<!--{% for x in allreviews %}
 		{{ x.Professor}}<br>
