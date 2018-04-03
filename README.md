@@ -32,25 +32,25 @@
 
 > In app folder course/settings.py
 
-> DATABASES = {
+DATABASES = {
 
->    'default': {
+    'default': {
 
->        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.mysql',
 
->       'NAME': 'Courses',
+       'NAME': 'Courses',
 
->        'USERNAME': 'root',
+        'USERNAME': 'root',
 
->       'PASSWORD': '*******',
+       'PASSWORD': '*******',
 
->        'HOST': 'localhost',
+        'HOST': 'localhost',
 
->        'PORT': ''
+        'PORT': ''
 
->    }
+    }
 
-> }
+ }
 
 > **edit above fields according to your system**
 
