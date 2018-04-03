@@ -32,7 +32,7 @@
 > git clone https://github.com/m-gautam/Course_SIte-Project-.git
 
 
-> ### In app folder course/settings.py
+> ### In app folder Coursesite/Coursesite/settings.py
   **edit above fields according to your system**
     
      DATABASES = {
