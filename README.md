@@ -19,7 +19,30 @@
 * git clone git://github.com/django/django.git
 * pip install -e django/
 
+
+## Installation of Database
+* sudo apt-get update
+* sudo apt-get install python-pip python-dev mysql-server libmysqlclient-dev
+* sudo mysql_install_db
+* sudo mysql_secure_installation
+
+
+
 > git clone https://github.com/m-gautam/Course_SIte-Project-.git
+
+In app folder course/settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Courses',
+        'USERNAME': 'root',
+        'PASSWORD': '*******',
+        'HOST': 'localhost',
+        'PORT': ''
+    }
+}
+
+edit above fields according to your system
 
 
 
