@@ -32,7 +32,7 @@
 
 
 > ### In app folder course/settings.py
-    **edit above fields according to your system**
+  **edit above fields according to your system**
     
      DATABASES = {
 
@@ -49,10 +49,10 @@
 
 
 ### After connecting the database, apply the project migrations.
-> python manage.py migrate
+> **python manage.py migrate**
 
 ### RUN
-> python manage.py runserver
+> **python manage.py runserver**
 
 
 
