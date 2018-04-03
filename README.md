@@ -15,7 +15,9 @@
 
 > https://www.python.org/downloads/
 
-> https://docs.djangoproject.com/en/1.11/intro/install/
+> ### Installation of Django
+* git clone git://github.com/django/django.git
+* pip install -e django/
 
 > git clone https://github.com/m-gautam/Course_SIte-Project-.git
 
