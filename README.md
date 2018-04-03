@@ -13,6 +13,7 @@
 
 ## Installation Guide
 
+
 > https://www.python.org/downloads/
 
 > ### Installation of Django
@@ -46,6 +47,7 @@
              'PORT': ''
          }
      }
+
 
 
 ### After connecting the database, apply the project migrations.
