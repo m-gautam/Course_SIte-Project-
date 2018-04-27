@@ -44,11 +44,27 @@ def index(request):
 	}
 	return HttpResponse(template.render(context, request))
 
+
+
+
+
+
 def detail(request):
-	search_str = request.POST['q']
-	p = Course.objects.filter(course_code = search_str)
-	q = Reviews.objects.filter(ccode = search_str)
-	return render(request, 'courses/detail.html',{'p':p, 'q':q} )
+	if request.method == 'GET' :
+		search_str = request.GET.get('q')
+		p = Course.objects.filter(course_code = q)
+		q = Reviews.objects.filter(ccode = search_str)
+		return render(request, 'courses/detail.html',{'p':p, 'q':q} )
+	else:
+		search_str = request.POST['q']
+		p = Course.objects.filter(course_code = search_str)
+		q = Reviews.objects.filter(ccode = search_str)
+		return render(request, 'courses/detail.html',{'p':p, 'q':q} )
+
+
+
+
+
 
 def add_course(request):
 	if request.method == 'GET' :
@@ -69,7 +85,11 @@ def add_course(request):
 			)
 		course.save()
 		p=Course.objects.all();
-		return render(request, 'courses/detail.html', {'p':p})
+		return render(request, 'courses/index.html', {'p':p})
+
+
+
+
 
 def add_reviews(request):
 		if request.method == 'GET' :
@@ -79,26 +99,39 @@ def add_reviews(request):
 			return HttpResponse(template.render(context, request))
 		else:
 			ccode = request.POST['ccode']
-			professor = request.POST['professor']
-			offered_year = request.POST['offered_year']
-			semester = request.POST['semester']
-			review = request.POST['review']
+			if ccode == Course.objects.filter(course_code = ccode):
+				professor = request.POST['professor']
+				offered_year = request.POST['offered_year']
+				semester = request.POST['semester']
+				review = request.POST['review']
 
-			review = Reviews(
-				ccode = ccode,
-				professor = professor,
-				offered_year = offered_year,
-				semester = semester,
-				review = review,
-			)
-			review.save()
-			allreviews = Reviews.objects.all();
-			return render(request, 'courses/index.html', {'allreviews' : allreviews})
+				review = Reviews(
+					ccode = ccode,
+					professor = professor,
+					offered_year = offered_year,
+					semester = semester,
+					review = review,
+				)
+				review.save()
+				allreviews = Reviews.objects.all();
+				return render(request, 'courses/index.html', {'allreviews' : allreviews})
+
+			else:
+				return HttpResponse('Course is invalid!')				
+
+
+
+
 
 def cfield(request):
 	search_str = request.POST['p']
 	field = Course.objects.filter( career_field = search_str);
 	return render (request, 'courses/careerfields.html', {'field' : field})
+
+
+
+
+
 
 def profdetails(request):
 	search_str = request.POST['p']

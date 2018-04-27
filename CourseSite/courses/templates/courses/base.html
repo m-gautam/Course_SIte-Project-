@@ -1,81 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
 	<title></title>
-	{% load staticfiles %}
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link href="https://fonts.google.com/specimen/Mina" rel="stylesheet" type='text/css'>
-	<link rel= "stylesheet" type="text/css" href="{% static 'music/style.css' %}" 0/>
-	<script src= "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+ 
+ {% load staticfiles %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/icons.cs' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/slider.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/skinteal.css' %}"/><!-- change skin color -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<script src="{% static "js/jquery-1.9.0.min.js" %}"></script><!-- the rest of the scripts at the bottom of the document -->
+
+ 
+
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
 
-	<div class = "container-fluid">
 
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-
-		</button>
-
-		<!--
-		<div class= "navbar-header">
-			<a class="navbar-brand" href="{% url 'music:index' %}">Viberr</a>
+<div class="grid" style="">
+	<div class="row space-bot">
+		<!--Logo-->
+		<div class="c4">
+			<h1><font face="georgia" color="#0047b3">COURSE SITE</font></h1>
 		</div>
-
-   
-         Items
-
-		<div class="collapse navbar-collapse" id = "topNavBar">
-			<ul class="nav navbar-nav">
-				<li class="">
-					<a href="{% url 'music:index' %}">
-						<span class="glyphicon glyphicon-cd aria-hidden="true></span>&nbsp;Albums
-					</a>
-				</li>
-
-				<li class="">
-					<a href="{% url 'music:index' %}">
-						<span class="glyphicon glyphicon-music aria-hidden="true></span>&nbsp;Songs
-					</a>
-				</li>
-
+		<!--Menu-->
+		<div class="c8">
+			<nav id="topNav">
+			<ul id="responsivemenu">
+				<li><a href="{% url 'index' %}"><i class="fa fa-home fa-2x" aria-hidden="true"></i><span class="showmobile">Home</span></a></li>
+				
+				<li><a href = "{% url 'signup' %}">Sign Up</a></li>	
+				<li><a href="{% url 'logout' %}">Log Out</a></li>		
+				<li><class="last"><a href="{% url 'login' %}">Log In</a></li>
+				
 			</ul>
-
+			</nav>
 		</div>
-	-->
-
-		<form class="navbar-form navbar-left" role = "search" method="get" action="#">
-			<div class="form-group">
-				<input type="text" class="form-control" name="q" value="">
-			</div>
-			<button type="submit" class = "btn btn-default">Search</button>
-		</form>
-
-		<ul class="nav navbar-nav navbar-right">
-			<li class="">
-				<a href="#">
-					<span class = "glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Add Album
-				</a>
-			</li>
-			<li class="">
-				<a href="#">
-					<span class = "glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;Logout
-				</a>
-			</li>
-
-		</ul>
-
-
 	</div>
+</div>
 
-</nav>
-<!--{% block body %}
-{% endblock %}-->				
+
+{% block body %}
+{% endblock %}
+
+
+
+<div id="wrapfooter">
+	<div class="grid">
+		<div class="row" id="footer">
+			<!-- to top button  -->
+			<p class="back-top floatright">
+				<a href="#top"><span></span></a>
+			</p>
+			<!-- 1st column -->
+			<div class="c3">
+				<img src="{% static "images/iitk.png" %}" style="padding-top: 10px;" alt="">
+			</div>
+			<!-- 2nd column -->
+			<div class="c3">
+				
+			</div>
+			<!-- 3rd column -->
+			<div class="c3">
+				<h2 class="title"><i class="icon-envelope-alt"></i> Contact</h2>
+				<hr class="footerstress"><br>
+				<dl>
+					<dt>A-201, Hall-12, IIT Kanpur</dt>
+					<dd><span>Telephone:</span>+91 9454022651</dd>
+					<dd>E-mail: <a href="more.html">gautamm@iitk.ac.in</a></dd>
+				</dl>
+				
+			</div>
+			<!-- 4th column -->
+			<div class="c3">
+				<h2 class="title"><i class="icon-link"></i> Links</h2>
+				<hr class="footerstress"><br>
+				<ul class="social-links" style="margin-top:15px;">
+					<li class="facebook-link smallrightmargin">
+					<a href="https://www.facebook.com/mgautam.04" class="facebook has-tip" target="_blank" title="Join us on Facebook">Facebook</a>
+					</li>
+					<li class="google-link smallrightmargin">
+					<a href="https://plus.google.com/100235532271980231997" class="google has-tip" title="Google +" target="_blank">Google</a>
+					</li>
+					<li class="linkedin-link smallrightmargin">
+					<a href="https://www.linkedin.com/in/gautam-meena-52a72512b/" class="linkedin has-tip" title="Linkedin" target="_blank">Linkedin</a>
+					</li>
+					<!-- <li class="pinterest-link smallrightmargin">
+					<a href="#" class="pinterest has-tip" title="Pinterest" target="_blank">Pinterest</a>
+					</li> -->
+				</ul>
+
+				
+				<a href="https://github.com/m-gautam/Course_SIte-Project-" title="Git Hub" target="_blank"><img src="{% static "images/git.png" %}" alt=""></a>
+				
+			</div>
+			<!-- end 4th column -->
+		</div>
+	</div>
+</div>
+
 
 </body>
 </html>

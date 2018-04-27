@@ -1,74 +1,273 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-	<title>Course Site</title>
+<head><meta name="viewport" content="width=device-width"/>
+<title> Course Site</title>
+<!-- STYLES & JQUERY 
+================================================== -->
+{% load staticfiles %}
 
-	<style>
-	body{background-color: #ffeecc;}
-	#d1
-	{
-		top:150px;
-		position: absolute;
-		left:150px;
-	}
-	#d2{
 
-		top: 150px;
-		position : absolute;
-		left : 600px;
-	}
-	#d3
-	{
-		top: 150px;
-		position: absolute;
-		right: 150px;
-	}
-	#d4
-	{
-		top:40px;
-		position: absolute;
-		right:30px;
-	}
-</style>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/icons.cs' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/slider.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/skinteal.css' %}"/><!-- change skin color -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<script src="{% static "js/jquery-1.9.0.min.js" %}"></script><!-- the rest of the scripts at the bottom of the document -->
+
+
+
 </head>
 <body>
-	<h1 align="center" ><u>COURSE SITE</u></h1>
-<hr>
-<div id="d1">
-	<form method="post" action="{% url 'detail' %}">
-		{%csrf_token%}
-		<input type="text" name="q" placeholder="COURSE CODE">&emsp;&emsp;
-		<button type="submit">Search</button>
-	</form>
+<!-- TOP LOGO & MENU
+================================================== -->
+<div class="grid" style="">
+	<div class="row space-bot">
+		<!--Logo-->
+		<div class="c4">
+			<h1><font face="georgia" color="#0047b3">COURSE SITE</font></h1>
+		</div>
+		<!--Menu-->
+		<div class="c8">
+			<nav id="topNav">
+			<ul id="responsivemenu">
+				<li><a href="{% url 'index' %}"><i class="fa fa-home fa-2x" aria-hidden="true"></i><span class="showmobile">Home</span></a></li>
+				
+				<li><a href = "{% url 'signup' %}">Sign Up</a></li>	
+				<li><a href="{% url 'logout' %}">Log Out</a></li>		
+				<li><class="last"><a href="{% url 'login' %}">Log In</a></li>
+				
+			</ul>
+			</nav>
+		</div>
+	</div>
 </div>
-<div id = "d2">
-	<form method="post" action ="{% url 'cfield' %}">
-		{%csrf_token%}
-		<input type="text" name="p" placeholder="CAREER FIELD">&emsp;&emsp;
-		<button type = "submit">Search</button>
-	</form>
-</div>
-<div id = "d3">
-	<form method="post" action ="{% url 'profdetails' %}">
-		{%csrf_token%}
-		<input type="text" name="p" placeholder="PROFESSOR">&emsp;&emsp;
-		<button type = "submit">Search</button>
-	</form>
-</div>
-<br><br>
+<div class="undermenuarea">
+	<div class="boxedshadow">
+	</div>
+	<!-- SLIDER AREA
+	================================================== -->
+	<div id="da-slider" class="da-slider">
 
-<div id="d4">
-	<a href = "{% url 'logout' %}">LOGOUT</a>
+		<h1 align="center"> <font color="white">Find What You Are Looking For !</font></h1>
+		<br><br>
+
+		<div class="c12">
+				
+				<div class="c3" align="center">
+					<form method="post" action="{% url 'detail' %}">
+						{%csrf_token%}
+						<input type="text" name="q" placeholder="COURSE CODE">
+						<button type="submit">Search</button>
+					</form>
+
+				</div>
+				<div class="c3" align="center">
+						<form method="post" action ="{% url 'cfield' %}">
+							{%csrf_token%}
+							<input type="text" name="p" placeholder="CAREER FIELD">
+							<button type = "submit">Search</button>
+						</form>
+					  
+				</div>
+				
+				<div class="c3" align="center">
+					<form method="post" action ="{% url 'profdetails' %}">
+						{%csrf_token%}
+						<input type="text" name="p" placeholder="PROFESSOR">
+						<button type = "submit">Search</button>
+						</form>
+					  
+				</div>
+				
+
+				<div class="c3" align="center">
+					<div class="dropdown">
+						<a href="{% url 'add_reviews' %}" ><button ><b>Add Review</b></button></a>
+					  
+					</div>
+				</div>
+				
+			</div>
+	</div>
 </div>
-
-<a href="{% url 'add_reviews' %}"> ADD REVIEWS</a>
-
-	<!--{% for x in allreviews %}
-		{{ x.Professor}}<br>
-		{{ x.Offered_year}}<br>
-		{{ x.Semester }}<br>
-		{{ x.Review }}<br>
-	{% endfor %}-->
+<!-- UNDER SLIDER - BLACK AREA
+================================================== -->
+<br>
+<!-- START content area
+================================================== -->
+<div class="grid">
+	<div class="row space-bot">
+		
+		<!--Box 1-->
+		<div class="c4">
+			<h2 class="title hometitlebg"><i class="icon-qrcode smallrightmargin"></i> ESC101A</h2>
+			<div class="noshadowbox">
+				<h5>Prof. Indranil Saha</h5>
+				<p>
+					 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit lacus mattis orci fermentum mollis iaculis purus lobortis. In et purus ut nunc elementum dapibus facilisis in quam.
+				</p>
+				
+			</div>
+		</div>
+		<!--Box 2-->
+		<div class="c4">
+			<h2 class="title hometitlebg"><i class="icon-qrcode smallrightmargin"></i> ESO207A</h2>
+			<div class="noshadowbox">
+				<h5>Prof. Saurav Ganguly</h5>
+				<p>
+					 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit lacus mattis orci fermentum mollis iaculis purus lobortis. In et purus ut nunc elementum dapibus facilisis in quam.
+				</p>
+				
+			</div>
+		</div>
+		<!--Box 3-->
+		<div class="c4">
+			<h2 class="title hometitlebg"><i class="icon-qrcode smallrightmargin" style="margin-right:10px;"></i> ESO205A</h2>
+			<div class="noshadowbox">
+				<h5>Prof. Krishanu Biswas</h5>
+				<p>
+					 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit lacus mattis orci fermentum mollis iaculis purus lobortis. In et purus ut nunc elementum dapibus facilisis in quam.
+				</p>
+				
+			</div>
+		</div>
+	</div>
 	
+</div>
+
+<!-- FOOTER
+================================================== -->
+<div id="wrapfooter">
+	<div class="grid">
+		<div class="row" id="footer">
+			<!-- to top button  -->
+			<p class="back-top floatright">
+				<a href="#top"><span></span></a>
+			</p>
+			<!-- 1st column -->
+			<div class="c3">
+				<img src="{% static "images/iitk.png" %}" style="padding-top: 5px;" alt="">
+			</div>
+			<!-- 2nd column -->
+			<div class="c3">
+				
+			</div>
+			<!-- 3rd column -->
+			<div class="c3">
+				<h2 class="title"><i class="icon-envelope-alt"></i> Contact</h2>
+				<hr class="footerstress">
+				<dl>
+					<dt>A-201, Hall-12, IIT Kanpur</dt>
+					<dd><span>Telephone:</span>+91 9454022651</dd>
+					<dd>E-mail: <a href="more.html">gautamm@iitk.ac.in</a></dd>
+				</dl>
+				
+			</div>
+			<!-- 4th column -->
+			<div class="c3">
+				<h2 class="title"><i class="icon-link"></i> Links</h2>
+				<hr class="footerstress">
+				<ul class="social-links" style="margin-top:15px;">
+					<li class="facebook-link smallrightmargin">
+					<a href="https://www.facebook.com/mgautam.04" class="facebook has-tip" target="_blank" title="Join us on Facebook">Facebook</a>
+					</li>
+					<li class="google-link smallrightmargin">
+					<a href="https://plus.google.com/100235532271980231997" class="google has-tip" title="Google +" target="_blank">Google</a>
+					</li>
+					<li class="linkedin-link smallrightmargin">
+					<a href="https://www.linkedin.com/in/gautam-meena-52a72512b/" class="linkedin has-tip" title="Linkedin" target="_blank">Linkedin</a>
+					</li>
+					<!-- <li class="pinterest-link smallrightmargin">
+					<a href="#" class="pinterest has-tip" title="Pinterest" target="_blank">Pinterest</a>
+					</li> -->
+				</ul>
+
+				
+				<a href="https://github.com/m-gautam/Course_SIte-Project-" title="Git Hub" target="_blank"><img src="{% static "images/git.png" %}" alt=""></a>
+				
+			</div>
+			<!-- end 4th column -->
+		</div>
+	</div>
+</div>
+<!-- copyright area -->
+<div class="copyright">
+	<div class="grid">
+		<div class="row">
+			<div class="c6">
+				 Gautam Meena &copy; 2015. All Rights Reserved.
+			</div>
+			<div class="c6">
+				<span class="right">
+				Premium Template by WowThemesNet </span>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END CONTENT AREA -->
+<!-- JAVASCRIPTS
+================================================== -->
+<!-- all -->
+<script src="{% static "js/modernizr-latest.js" %}"></script>
+
+<!-- menu & scroll to top -->
+<script src="{% static "js/common.js" %}"></script>
+
+<!-- slider -->
+<script src="{% static "js/jquery.cslider.js" %}"></script>
+
+<!-- cycle -->
+<script src="{% static "js/jquery.cycle.js" %}"></script>
+
+<!-- carousel items -->
+<script src="{% static "js/jquery.carouFredSel-6.0.3-packed.js" %}"></script>
+
+<!-- twitter -->
+<script src="{% static "js/jquery.tweet.js" %}"></script>
+
+<!-- Call Showcase - change 4 from min:4 and max:4 to the number of items you want visible -->
+<script type="text/javascript">
+$(window).load(function(){			
+			$('#recent-projects').carouFredSel({
+				responsive: true,
+				width: '100%',
+				auto: true,
+				circular	: true,
+				infinite	: false,
+				prev : {
+					button		: "#car_prev",
+					key			: "left",
+						},
+				next : {
+					button		: "#car_next",
+					key			: "right",
+							},
+				swipe: {
+					onMouse: true,
+					onTouch: true
+					},
+				scroll : 2000,
+				items: {
+					visible: {
+						min: 4,
+						max: 4
+					}
+				}
+			});
+		});	
+</script>
+
+<!-- Call opacity on hover images from carousel-->
+<script type="text/javascript">
+$(document).ready(function(){
+    $("img.imgOpa").hover(function() {
+      $(this).stop().animate({opacity: "0.6"}, 'slow');
+    },
+    function() {
+      $(this).stop().animate({opacity: "1.0"}, 'slow');
+    });
+  });
+</script>
 </body>
 </html>

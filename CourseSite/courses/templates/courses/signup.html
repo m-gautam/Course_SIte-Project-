@@ -1,5 +1,9 @@
-{% block content %}
+{% extends 'courses/base.html' %}
+
+{% block body %}
+<div align = "center">
   <h2>Sign up</h2>
+</div>
   <form method="post">
     {% csrf_token %}
       {% for field in form %}
@@ -17,4 +21,6 @@
 
     <button type="submit">Sign up</button>
   </form>
+
+
 {% endblock %}

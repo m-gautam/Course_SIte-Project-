@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>COURSE SITE</title>
-	<style>
-		body{background-color: #ffeecc;}
+{% extends 'courses/base.html' %}
 
-	</style>
-</head>
-<body>
-	<h2 align = "center">COURSE SITE</h2>
-	<hr>
+{% block body%}
 	<h4>CAREER FIELD:</h4>
 	{% if field.career_field %}
 		{{ field.career_field }}
@@ -17,6 +8,4 @@
 	{% for x in field %}
 		{{ x.course_code }}<br>
 	{% endfor %}
-
-</body>
-</html>
+{% endblock %}
