@@ -4,7 +4,8 @@
 <div align = "center">
   <h2>Sign up</h2>
 </div>
-  <form method="post">
+<div align="center">
+  <form style="width:20%" method="post">
     {% csrf_token %}
       {% for field in form %}
       <p>
@@ -19,8 +20,9 @@
       </p>
       {% endfor %}
 
-    <button type="submit">Sign up</button>
+    <div align="center"><button type="submit">Sign up</button></div>
   </form>
+</div>
 
 
 {% endblock %}

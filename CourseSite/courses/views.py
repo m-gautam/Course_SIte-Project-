@@ -99,25 +99,24 @@ def add_reviews(request):
 			return HttpResponse(template.render(context, request))
 		else:
 			ccode = request.POST['ccode']
-			if ccode == Course.objects.filter(course_code = ccode):
-				professor = request.POST['professor']
-				offered_year = request.POST['offered_year']
-				semester = request.POST['semester']
-				review = request.POST['review']
+			#if ccode == Course.objects.filter(course_code = ccode):
+			professor = request.POST['professor']
+			offered_year = request.POST['offered_year']
+			semester = request.POST['semester']
+			review = request.POST['review']
+			review = Reviews(
+				ccode = ccode,
+				professor = professor,
+				offered_year = offered_year,
+				semester = semester,
+				review = review,
+			)
+			review.save()
+			allreviews = Reviews.objects.all();
+			return render(request, 'courses/index.html', {'allreviews' : allreviews})
 
-				review = Reviews(
-					ccode = ccode,
-					professor = professor,
-					offered_year = offered_year,
-					semester = semester,
-					review = review,
-				)
-				review.save()
-				allreviews = Reviews.objects.all();
-				return render(request, 'courses/index.html', {'allreviews' : allreviews})
-
-			else:
-				return HttpResponse('Course is invalid!')				
+			# else:
+			# 	return HttpResponse('Course is invalid!')				
 
 
 

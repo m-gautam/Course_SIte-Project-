@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>COURSE INFO</title>
-	<style>
+{% extends 'courses/base.html' %}
 
-		body{background-color: #ffeecc;}
-	</style>
-</head>
-<body>
-	<h2 align ="center">COURSE SITE</h2>
-	<hr>
+{% block body %}
 	<h3>PROFESSOR DETAILS:</h3><br>
-	{% for x in field %}
+	<h5>{% for x in field %}
+	COURSE: {{ x.ccode }}<br>
 	PROFESSOR: {{ x.professor }}<br>
 	SEMESTER: {{ x.semester }}<br>
 	YEAR: {{x.offered_year}}</br>
-	REVIEW: {{ x.review }}
+	REVIEW: {{ x.review }}</h5>
 		<br><br>
 	{% endfor %}
-</body>
-</html>
+{% endblock %}
